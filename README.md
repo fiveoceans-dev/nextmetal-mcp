@@ -11,9 +11,35 @@ It is designed to manage and facilitate communication between multiple clients u
 
 (Further usage instructions will go here.)
 
-## Test the MCP Server
+## Testing with Python Client (Recommended)
 
-Once the server is running (using `python server.py`), you can test it using `curl` commands in a new terminal.
+The Dedalus MCP server communicates using Server-Sent Events (SSE), especially when streaming capabilities are enabled. For a robust and programmatic way to interact with the server and parse its streamed responses, it is recommended to use the provided `client.py` script. This script utilizes the `dedalus_mcp.client` library, which is designed to handle SSE and abstract the underlying JSON-RPC details.
+
+To use the client:
+
+1.  **Ensure the MCP Server is running:**
+    Open a terminal and start the server:
+    ```bash
+    python server.py
+    ```
+    Keep this terminal open as the server will continue to run.
+
+2.  **Activate your Python virtual environment:**
+    Open a *new* terminal and activate your virtual environment:
+    ```bash
+    source venv/bin/activate
+    ```
+    (Replace `venv/bin/activate` with `.\venv\Scripts\activate` on Windows)
+
+3.  **Run the client script:**
+    ```bash
+    python client.py
+    ```
+    This script will connect to the server, list tools, and demonstrate calls to champion and item information tools.
+
+## Testing with `curl` (Raw HTTP Interaction)
+
+**Note:** The Dedalus MCP server primarily uses Server-Sent Events (SSE) for its responses. While the `curl` commands below are formatted to send correct JSON-RPC requests, piping their output to `json_pp` will result in "malformed JSON string" errors because `json_pp` cannot parse event streams. Use these commands to inspect raw server responses, or use `client.py` for parsed output.
 
 ### Access API Documentation
 
