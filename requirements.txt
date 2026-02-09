@@ -1,3 +1,4 @@
 requests
 dedalus_labs
 dedalus-mcp
+python-dotenv
