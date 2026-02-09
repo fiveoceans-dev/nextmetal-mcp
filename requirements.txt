@@ -1,0 +1,3 @@
+requests
+dedalus_labs
+dedalus-mcp

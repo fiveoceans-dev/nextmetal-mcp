@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+.Python
+build/
+dist/
+*.egg-info/
+.mypy_cache/
+.pytest_cache/
+
+# Editor-specific
+.vscode/
+.idea/
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
